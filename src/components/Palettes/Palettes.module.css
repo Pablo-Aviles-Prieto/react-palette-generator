@@ -1,0 +1,15 @@
+.palettes {
+  margin: auto;
+  max-width: 1000px;
+}
+
+.head {
+  margin: 5rem 0 2rem 0;
+}
+
+.saved-palettes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5px;
+  margin: auto;
+}

@@ -1,0 +1,48 @@
+.button {
+  display: inline-flex;
+  height: 40px;
+  width: 180px;
+  border: 2px solid #bfc0c0;
+  margin: 20px 20px 20px 20px;
+  color: #bfc0c0;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.8em;
+  letter-spacing: 1.5px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+a {
+  color: #bfc0c0;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.arrow-hover {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  transform: translateX(60px);
+  opacity: 0;
+  -webkit-transition: all 0.25s cubic-bezier(0.14, 0.59, 1, 1.01);
+  transition: all 0.15s cubic-bezier(0.14, 0.59, 1, 1.01);
+  margin: 0;
+  padding: 0 5px;
+}
+
+.button-1:hover svg {
+  width: 30px;
+  opacity: 1;
+  transform: translateX(50px);
+}
+
+@media screen and (min-width: 1000px) {
+  h1 {
+    font-size: 2.2em;
+  }
+  #container {
+    width: 50%;
+  }
+}

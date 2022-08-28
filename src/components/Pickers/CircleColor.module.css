@@ -1,0 +1,21 @@
+.circle {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 70px;
+  height: 70px;
+  border-radius: 35px;
+  border: 2.5px solid rgb(255, 255, 255);
+}
+
+.circle-active {
+  transform: scale(1.35);
+}
+
+.circle-empty {
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+5,b5b5b5+6,b5b5b5+6,b5b5b5+11,1c1c1c+13,1c1c1c+17,b5b5b5+18,b5b5b5+27,2b2b2b+27,2b2b2b+35,b5b5b5+36,b5b5b5+36,b5b5b5+44,000000+46,000000+55,b5b5b5+57,b5b5b5+57,b5b5b5+66,1c1c1c+68,1c1c1c+72,1c1c1c+77,b5b5b5+79,b5b5b5+86,1c1c1c+88,1c1c1c+88,1c1c1c+90,1c1c1c+91,1c1c1c+94,b5b5b5+96,b5b5b5+100 */
+  background: #000000; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #000000 0%, #000000 5%, #b5b5b5 6%, #b5b5b5 6%, #b5b5b5 11%, #1c1c1c 13%, #1c1c1c 17%, #b5b5b5 18%, #b5b5b5 27%, #2b2b2b 27%, #2b2b2b 35%, #b5b5b5 36%, #b5b5b5 36%, #b5b5b5 44%, #000000 46%, #000000 55%, #b5b5b5 57%, #b5b5b5 57%, #b5b5b5 66%, #1c1c1c 68%, #1c1c1c 72%, #1c1c1c 77%, #b5b5b5 79%, #b5b5b5 86%, #1c1c1c 88%, #1c1c1c 88%, #1c1c1c 90%, #1c1c1c 91%, #1c1c1c 94%, #b5b5b5 96%, #b5b5b5 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  #000000 0%,#000000 5%,#b5b5b5 6%,#b5b5b5 6%,#b5b5b5 11%,#1c1c1c 13%,#1c1c1c 17%,#b5b5b5 18%,#b5b5b5 27%,#2b2b2b 27%,#2b2b2b 35%,#b5b5b5 36%,#b5b5b5 36%,#b5b5b5 44%,#000000 46%,#000000 55%,#b5b5b5 57%,#b5b5b5 57%,#b5b5b5 66%,#1c1c1c 68%,#1c1c1c 72%,#1c1c1c 77%,#b5b5b5 79%,#b5b5b5 86%,#1c1c1c 88%,#1c1c1c 88%,#1c1c1c 90%,#1c1c1c 91%,#1c1c1c 94%,#b5b5b5 96%,#b5b5b5 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  #000000 0%,#000000 5%,#b5b5b5 6%,#b5b5b5 6%,#b5b5b5 11%,#1c1c1c 13%,#1c1c1c 17%,#b5b5b5 18%,#b5b5b5 27%,#2b2b2b 27%,#2b2b2b 35%,#b5b5b5 36%,#b5b5b5 36%,#b5b5b5 44%,#000000 46%,#000000 55%,#b5b5b5 57%,#b5b5b5 57%,#b5b5b5 66%,#1c1c1c 68%,#1c1c1c 72%,#1c1c1c 77%,#b5b5b5 79%,#b5b5b5 86%,#1c1c1c 88%,#1c1c1c 88%,#1c1c1c 90%,#1c1c1c 91%,#1c1c1c 94%,#b5b5b5 96%,#b5b5b5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#b5b5b5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}

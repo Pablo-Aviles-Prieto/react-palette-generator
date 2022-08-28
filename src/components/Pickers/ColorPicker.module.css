@@ -1,0 +1,17 @@
+.picked-colors {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 3rem 0 4.5rem 0;
+}
+
+.picker-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.picker-section > div > div {
+  border-radius: 8px !important;
+}

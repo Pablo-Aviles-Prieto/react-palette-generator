@@ -1,0 +1,34 @@
+.circle {
+  transition: transform 0.3s ease;
+  width: 34px;
+  height: 34px;
+  border-radius: 17px;
+  border: 2.5px solid rgb(255, 255, 255);
+}
+
+.card {
+  width: 270px;
+  height: 100px;
+  transition: transform 0.3s ease;
+}
+
+.card-active {
+  transform: scale(1.12);
+}
+
+.title {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5px;
+}
+
+.circles-section {
+  border-radius: 10px;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  background-color: #151515;
+  cursor: pointer;
+}

@@ -1,0 +1,26 @@
+.save-input label {
+  font-weight: bold;
+}
+
+.save-input div {
+  margin-top: 5px;
+  display: flex;
+  gap: 9px;
+}
+
+.save-input input {
+  border-radius: 6px;
+  border: 3px solid;
+  color: white;
+  outline: none;
+  padding: 0 50px 0 10px;
+  background-color: transparent;
+}
+
+.save-input button {
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 0 10px;
+  background-color: white;
+  cursor: pointer;
+}
