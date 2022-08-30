@@ -58,7 +58,6 @@ const SinglePalette = (props) => {
 
   return (
     <>
-      <wc-toast></wc-toast>
       <div className={classes()}>
         <div className={styles.title}>
           <p>{props.palette.title}</p>

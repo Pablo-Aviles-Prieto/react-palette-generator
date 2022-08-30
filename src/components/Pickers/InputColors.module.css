@@ -2,7 +2,7 @@
   font-weight: bold;
 }
 
-.save-input div {
+.input-btn {
   margin-top: 5px;
   display: flex;
   gap: 9px;
@@ -23,4 +23,20 @@
   padding: 0 10px;
   background-color: white;
   cursor: pointer;
+}
+
+@media (max-width: 655px) {
+  .input-btn {
+    justify-content: center;
+  }
+  .save-input {
+    margin-top: 1rem;
+  }
+  .form-control {
+    width: 286px;
+    margin: auto;
+  }
+  .form-control label {
+    text-align: left;
+  }
 }

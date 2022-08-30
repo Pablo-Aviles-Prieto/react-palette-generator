@@ -22,7 +22,7 @@ export const SavedPaletteProvider = (props) => {
 
   useEffect(() => {
     setSavedPalettes(getLocalStorage());
-  }, [setSavedPalettes]);
+  }, []);
 
   const removeSavedPaletteHandler = (id) => {
     setSavedPalettes((prevState) => {

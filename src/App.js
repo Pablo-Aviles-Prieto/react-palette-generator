@@ -11,6 +11,7 @@ const App = () => {
   return (
     <SavedPaletteProvider>
       <PaletteProvider>
+      <wc-toast></wc-toast>
         <Layout>
           <Routes>
             <Route path='/' element={<Main />}>

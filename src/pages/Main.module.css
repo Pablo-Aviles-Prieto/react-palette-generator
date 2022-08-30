@@ -1,6 +1,46 @@
 .helper {
-    cursor: pointer;
-    position: fixed;
-    top: 2.4rem;
-    right: 1.5rem;
+  cursor: pointer;
+  position: fixed;
+  top: 2.4rem;
+  right: 1.5rem;
 }
+
+@media (max-width: 496px) {
+  .helper {
+    top: 2.6rem;
+    right: 0.7rem;
+  }
+  .helper svg {
+    width: 40px;
+  }
+}
+
+@media (max-width: 425px) {
+  .helper {
+    top: 2.8rem;
+    right: 0.7rem;
+  }
+  .helper svg {
+    width: 30px;
+  }
+}
+
+@media (max-width: 371px) {
+  .helper {
+    top: 2.9rem;
+    right: 0.7rem;
+  }
+  .helper svg {
+    width: 28px;
+  }
+}
+
+@media (max-width: 336px) {
+    .helper {
+      top: 3rem;
+      right: 0.7rem;
+    }
+    .helper svg {
+      width: 20px;
+    }
+  }

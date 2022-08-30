@@ -108,7 +108,6 @@ export const PaletteProvider = (props) => {
     }
   }, [paletteEditing, dispatchColorPicked, setInputError]);
 
-  
   useEffect(() => {
     if (initial) {
       const params = [];

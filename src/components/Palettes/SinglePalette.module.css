@@ -26,9 +26,13 @@
 
 .circles-section {
   border-radius: 10px;
-  padding: 0.5rem;
+  padding: 0.7rem 0.9rem;
   display: flex;
   justify-content: space-between;
   background-color: #151515;
   cursor: pointer;
+}
+
+.bground {
+  background-color: #151515;
 }

@@ -59,15 +59,17 @@ const InputColors = ({ onSubmit }) => {
 
   return (
     <form onSubmit={submitHandler} className={styles['save-input']}>
-      <label>Name</label>
-      <div>
-        <input
-          ref={inputRef}
-          style={{ borderColor: inputError ? 'red' : 'white' }}
-        />
-        <button>
-          <Plus width={30} />
-        </button>
+      <div className={styles['form-control']}>
+        <label>Name</label>
+        <div className={styles['input-btn']}>
+          <input
+            ref={inputRef}
+            style={{ borderColor: inputError ? 'red' : 'white' }}
+          />
+          <button>
+            <Plus width={30} />
+          </button>
+        </div>
       </div>
     </form>
   );
