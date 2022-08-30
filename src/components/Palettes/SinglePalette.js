@@ -1,14 +1,17 @@
-import { useCallback, useState, useEffect } from 'react';
+import { useCallback, useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import styles from './SinglePalette.module.css';
 import { Trash, Copy, Copied } from '../Icons';
+import { SavedPalettesContext } from '../../store/savedPalettes-context.js';
 
 let copyPaletteTimeout;
 
 const SinglePalette = (props) => {
   const [isCopied, setIsCopied] = useState(false);
   const navigate = useNavigate();
+  const { paletteEditing, removeSavedPalette, editSavedPalette } =
+    useContext(SavedPalettesContext);
 
   useEffect(() => {
     if (isCopied) {
@@ -19,15 +22,9 @@ const SinglePalette = (props) => {
     return () => clearTimeout(copyPaletteTimeout);
   }, [isCopied]);
 
-  const { id: idPaletteEditing } = props.paletteEditing;
+  const { id: idPaletteEditing } = paletteEditing;
   const { id: idPalette } = props;
-
   const isEditing = idPaletteEditing === idPalette;
-
-  const copyPaletteHandler = () => {
-    navigator.clipboard.writeText(window.location.href);
-    setIsCopied(true);
-  };
 
   const classes = useCallback(() => {
     if (isEditing) {
@@ -36,8 +33,9 @@ const SinglePalette = (props) => {
     return `${styles.card}`;
   }, [isEditing]);
 
-  const removeItemHandler = () => {
-    props.onRemovePalette(props.palette.id);
+  const copyPaletteHandler = () => {
+    navigator.clipboard.writeText(window.location.href);
+    setIsCopied(true);
   };
 
   const editPaletteHandler = () => {
@@ -48,7 +46,7 @@ const SinglePalette = (props) => {
     navigate(
       `/?1=${paramColors[0]}&2=${paramColors[1]}&3=${paramColors[2]}&4=${paramColors[3]}&5=${paramColors[4]}`
     );
-    props.onEditPalette(props.palette);
+    editSavedPalette(props.palette);
   };
 
   return (
@@ -59,7 +57,7 @@ const SinglePalette = (props) => {
           {!isEditing ? (
             <Trash
               style={{ cursor: 'pointer' }}
-              onClick={removeItemHandler}
+              onClick={() => removeSavedPalette(props.palette.id)}
               width={21}
             />
           ) : !isCopied ? (

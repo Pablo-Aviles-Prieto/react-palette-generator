@@ -1,25 +1,13 @@
+import { useContext } from 'react';
+
 import Palettes from './Palettes';
 import NoPalettes from './NoPalettes';
-import { useOutletContext } from 'react-router-dom';
+import { SavedPalettesContext } from '../../store/savedPalettes-context';
 
 const SavedPalettes = () => {
-  const [savedPalettes, paletteEditing, onEditPalette, onRemovePalette] =
-    useOutletContext();
+  const { savedPalettes } = useContext(SavedPalettesContext);
 
-  return (
-    <>
-      {savedPalettes.length > 0 ? (
-        <Palettes
-          onRemovePalette={onRemovePalette}
-          savedPalettes={savedPalettes}
-          onEditPalette={onEditPalette}
-          paletteEditing={paletteEditing}
-        />
-      ) : (
-        <NoPalettes />
-      )}
-    </>
-  );
+  return savedPalettes.length > 0 ? <Palettes /> : <NoPalettes />;
 };
 
 export default SavedPalettes;

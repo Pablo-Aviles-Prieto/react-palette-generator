@@ -1,16 +1,20 @@
-import CircleColor from './CircleColor';
+import { useContext } from 'react';
 
-const CircleColorList = (props) => {
+import CircleColor from './CircleColor';
+import { PaletteContext } from '../../store/palette-context';
+
+const CircleColorList = () => {
+  const { colorPicked } = useContext(PaletteContext);
+
   return (
     <>
-      {props.state.map((circle) => {
+      {colorPicked.map((circle) => {
         return (
           <CircleColor
             key={circle.id}
             id={circle.id}
             bg={circle.color}
             selected={circle.isSelected}
-            onClicked={props.onClicked}
             hasError={circle.hasError}
           />
         );

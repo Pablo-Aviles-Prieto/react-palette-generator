@@ -1,10 +1,17 @@
+import { useContext, useCallback } from 'react';
+
 import { Plus } from '../Icons';
 import styles from './CircleColor.module.css';
+import { PaletteContext } from '../../store/palette-context.js';
 
 const CircleColor = (props) => {
-  const clickHandler = () => {
-    props.onClicked(props.id);
-  };
+  const { setCircleFocus } = useContext(PaletteContext);
+
+  const { id } = props;
+
+  const clickHandler = useCallback(() => {
+    setCircleFocus(id);
+  }, [setCircleFocus, id]);
 
   const classes = props.selected
     ? `${styles.circle} ${styles['circle-active']}`
