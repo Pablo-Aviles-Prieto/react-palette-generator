@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './SinglePalette.module.css';
 import { Trash, Copy, Copied } from '../Icons';
 import { SavedPalettesContext } from '../../store/savedPalettes-context.js';
+import { toast } from 'https://cdn.skypack.dev/wc-toast';
 
 let copyPaletteTimeout;
 
@@ -35,6 +36,12 @@ const SinglePalette = (props) => {
 
   const copyPaletteHandler = () => {
     navigator.clipboard.writeText(window.location.href);
+    toast('URL Copied!', {
+      icon: {
+        type: 'success',
+      },
+      duration: 2000,
+    });
     setIsCopied(true);
   };
 
@@ -50,37 +57,40 @@ const SinglePalette = (props) => {
   };
 
   return (
-    <div className={classes()}>
-      <div className={styles.title}>
-        <p>{props.palette.title}</p>
-        <div>
-          {!isEditing ? (
-            <Trash
-              style={{ cursor: 'pointer' }}
-              onClick={() => removeSavedPalette(props.palette.id)}
-              width={21}
+    <>
+      <wc-toast></wc-toast>
+      <div className={classes()}>
+        <div className={styles.title}>
+          <p>{props.palette.title}</p>
+          <div>
+            {!isEditing ? (
+              <Trash
+                style={{ cursor: 'pointer' }}
+                onClick={() => removeSavedPalette(props.palette.id)}
+                width={21}
+              />
+            ) : !isCopied ? (
+              <Copy
+                style={{ cursor: 'pointer' }}
+                onClick={copyPaletteHandler}
+                width={21}
+              />
+            ) : (
+              <Copied width={21} />
+            )}
+          </div>
+        </div>
+        <div onClick={editPaletteHandler} className={styles['circles-section']}>
+          {props.palette.colors.map((circle) => (
+            <div
+              className={styles.circle}
+              style={{ backgroundColor: circle.color }}
+              key={circle.id}
             />
-          ) : !isCopied ? (
-            <Copy
-              style={{ cursor: 'pointer' }}
-              onClick={copyPaletteHandler}
-              width={21}
-            />
-          ) : (
-            <Copied width={21} />
-          )}
+          ))}
         </div>
       </div>
-      <div onClick={editPaletteHandler} className={styles['circles-section']}>
-        {props.palette.colors.map((circle) => (
-          <div
-            className={styles.circle}
-            style={{ backgroundColor: circle.color }}
-            key={circle.id}
-          />
-        ))}
-      </div>
-    </div>
+    </>
   );
 };
 
