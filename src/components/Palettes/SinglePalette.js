@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './SinglePalette.module.css';
 import { Trash, Copy, Copied } from '../Icons';
 import { SavedPalettesContext } from '../../store/savedPalettes-context.js';
-import { toast } from 'https://cdn.skypack.dev/wc-toast';
+import { toast } from 'wc-toast';
 
 let copyPaletteTimeout;
 
