@@ -16,9 +16,16 @@
   border-radius: 8px !important;
 }
 
-@media (max-width: 655px) {
+@media (max-width: 870px) {
+  .picked-colors {
+    margin-top: 8rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 750px) {
   .picker-section {
     flex-direction: column;
-    gap: 4px;
+    gap: 2rem;
   }
 }

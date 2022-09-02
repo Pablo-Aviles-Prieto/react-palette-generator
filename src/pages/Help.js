@@ -3,12 +3,8 @@ import { Link } from 'react-router-dom';
 import styles from './Help.module.css';
 import classes from '../ButtonHelper.module.css';
 import PaletteExample from '../components/Palettes/PaletteExample';
-import {
-  Plus,
-  Trash,
-  Copy,
-  Pencil,
-} from '../components/Icons/index.js';
+import DropDownExample from '../components/Layout/DropDownExample';
+import { Plus, Trash, Copy, Pencil } from '../components/Icons/index.js';
 
 const Help = () => {
   return (
@@ -28,6 +24,10 @@ const Help = () => {
             </div>
           </div>
           <div>
+            - You can choose between different pickers with different options to
+            play with <DropDownExample />
+          </div>
+          <div>
             - When all the circles are filled, you have to chose a name for the
             palette in order to save it, clicking in the icon{'  '}
             <button className={styles['example-add-button']}>
@@ -36,7 +36,7 @@ const Help = () => {
           </div>
           <div>
             - You can edit a saved palette by clicking on them{' '}
-            <PaletteExample />
+            <PaletteExample className={styles['get-gapped']} />
           </div>
           <div>
             - While edditting a palette, you can also copy the URL of the active

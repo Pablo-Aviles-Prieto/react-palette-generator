@@ -2,7 +2,7 @@ import styles from './PaletteExample.module.css';
 
 const PaletteExample = () => {
   return (
-    <div className={styles['circles-section']}>
+    <div className={`${styles['circles-section']} get-gapped`}>
       <div className={styles.circle} style={{ backgroundColor: '#A4DD00' }} />
       <div className={styles.circle} style={{ backgroundColor: '#68CCCA' }} />
       <div className={styles.circle} style={{ backgroundColor: '#73D8FF' }} />

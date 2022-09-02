@@ -38,7 +38,10 @@ const colorReducer = (state, action) => {
     case 'COLOR': {
       const newState = state.map((circle) => {
         if (circle.isSelected) {
-          return { ...circle, color: action.color };
+          return {
+            ...circle,
+            color: action.colorRGB,
+          };
         }
         return circle;
       });
@@ -73,7 +76,8 @@ const colorReducer = (state, action) => {
         const matchCircle = action.palette.find(
           (paletteCircle) => +paletteCircle.key === circle.id
         );
-        return { ...circle, color: `#${matchCircle.value}` };
+        const newRGBColorFromParams = `rgba(${matchCircle.color[0]}, ${matchCircle.color[1]}, ${matchCircle.color[2]}, ${matchCircle.color[3]})`;
+        return { ...circle, color: newRGBColorFromParams };
       });
       return newState;
     }
@@ -88,7 +92,7 @@ let initial = true;
 
 export const PaletteProvider = (props) => {
   const [inputError, setInputError] = useState(false);
-  const [paletteColor, setPaletteColor] = useState('#fff');
+  const [paletteColor, setPaletteColor] = useState('rgba(255, 255, 255, 1)');
   const [colorPicked, dispatchColorPicked] = useReducer(
     colorReducer,
     INITIAL_STATE
@@ -112,7 +116,8 @@ export const PaletteProvider = (props) => {
     if (initial) {
       const params = [];
       searchParams.forEach((value, key) => {
-        params.push({ key, value });
+        const valueArray = value.split(',');
+        params.push({ key, color: valueArray });
       });
 
       dispatchColorPicked({ type: 'PARAMS', palette: params });
@@ -123,8 +128,12 @@ export const PaletteProvider = (props) => {
 
   const changeColorHandler = useCallback(
     (color) => {
-      setPaletteColor(color.hex);
-      dispatchColorPicked({ type: 'COLOR', color: color.hex });
+      const newRGB = `rgba(${color.rgb.r}, ${color.rgb.g}, ${color.rgb.b}, ${color.rgb.a})`;
+      setPaletteColor(newRGB);
+      dispatchColorPicked({
+        type: 'COLOR',
+        colorRGB: newRGB,
+      });
     },
     [setPaletteColor, dispatchColorPicked]
   );

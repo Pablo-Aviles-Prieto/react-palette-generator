@@ -14,7 +14,6 @@
   align-items: center;
 }
 
-
 .example-add-button {
   border: 1px solid;
   border-radius: 8px;
@@ -135,4 +134,10 @@
     #b5b5b5 100%
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#b5b5b5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@media (max-width: 840px) {
+  .instructions {
+    display: block
+  }
 }

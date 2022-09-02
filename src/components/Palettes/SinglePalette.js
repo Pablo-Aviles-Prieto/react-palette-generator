@@ -47,8 +47,11 @@ const SinglePalette = (props) => {
 
   const editPaletteHandler = () => {
     const paramColors = props.palette.colors.map((paletteCircle) => {
-      const hexColorSliced = paletteCircle.color.slice(1);
-      return hexColorSliced;
+      const newRGBParam = paletteCircle.color
+        .replace(/[^\d,.]/g, '')
+        .split(',');
+
+      return newRGBParam;
     });
     navigate(
       `/?1=${paramColors[0]}&2=${paramColors[1]}&3=${paramColors[2]}&4=${paramColors[3]}&5=${paramColors[4]}`

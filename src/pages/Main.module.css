@@ -2,7 +2,13 @@
   cursor: pointer;
   position: fixed;
   top: 2.4rem;
-  right: 1.5rem;
+  right: .9rem;
+}
+
+@media (max-width: 870px) {
+  .helper {
+    position: absolute;
+  }
 }
 
 @media (max-width: 496px) {
@@ -36,11 +42,11 @@
 }
 
 @media (max-width: 336px) {
-    .helper {
-      top: 3rem;
-      right: 0.7rem;
-    }
-    .helper svg {
-      width: 20px;
-    }
+  .helper {
+    top: 3rem;
+    right: 0.7rem;
   }
+  .helper svg {
+    width: 20px;
+  }
+}

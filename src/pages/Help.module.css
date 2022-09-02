@@ -24,7 +24,6 @@
   margin-top: 15px;
 }
 
-.instructions p,
 .instructions div {
   display: flex;
   gap: 10px;
@@ -162,4 +161,47 @@
     #b5b5b5 100%
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#b5b5b5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@media (max-width: 834px) {
+  .instructions div {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 686px) {
+  .head h1 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 581px) {
+  .instructions div {
+    gap: 0;
+  }
+  .instructions div div {
+    gap: 10px;
+  }
+}
+
+@media (max-width: 484px) {
+  .back-start h3 {
+    font-size: 15px;
+  }
+  .instructions div {
+    justify-content: center;
+  }
+  .instructions div i,
+  .instructions .circle,
+  .instructions button,
+  .instructions div > svg,
+  .instructions > div > div {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .back-start h3 {
+    text-align: center;
+  }
 }

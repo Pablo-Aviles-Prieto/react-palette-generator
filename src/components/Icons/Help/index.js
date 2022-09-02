@@ -6,7 +6,7 @@ export const Help = (props) => (
     height={props.height}
     viewBox='0 0 24 24'
     strokeWidth={1.5}
-    stroke='#fff'
+    stroke='#916DE7'
     fill='none'
     strokeLinecap='round'
     strokeLinejoin='round'

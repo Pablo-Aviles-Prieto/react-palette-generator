@@ -6,7 +6,7 @@ import { Plus } from '../Icons/index.js';
 import { PaletteContext } from '../../store/palette-context';
 import { SavedPalettesContext } from '../../store/savedPalettes-context';
 
-const InputColors = ({ onSubmit }) => {
+const InputColors = () => {
   const inputRef = useRef();
   const {
     colorPicked,
