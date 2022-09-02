@@ -36,7 +36,7 @@ li:hover {
 }
 
 .drop-down-card-active {
-  max-height: 20rem;
+  max-height: 21rem;
   transition: max-height 0.45s ease-out;
 }
 

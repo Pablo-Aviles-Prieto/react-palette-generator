@@ -40,7 +40,6 @@ const DropDownOptions = ({
     return (
       <ul className={ulStyle}>
         {optionsDropDown.map((option) => {
-          console.log('option.label', option.label);
           return selectedPicker === option.label ? (
             <li
               className={liStyle}
