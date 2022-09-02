@@ -95,6 +95,13 @@ li:hover {
   }
 }
 
+@media (max-width: 411px) {
+  .drop-down-card {
+    left: calc(50% - 5.5rem);
+    max-width: 11rem;
+  }
+}
+
 @keyframes growDown {
   0% {
     transform: scaleY(0);

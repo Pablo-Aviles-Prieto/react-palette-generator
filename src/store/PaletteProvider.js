@@ -73,9 +73,14 @@ const colorReducer = (state, action) => {
       }
 
       const newState = state.map((circle) => {
-        const matchCircle = action.palette.find(
-          (paletteCircle) => +paletteCircle.key === circle.id
-        );
+        const matchCircle = action.palette.find((paletteCircle) => {
+          return +paletteCircle.key === circle.id;
+        });
+
+        if (!matchCircle) {
+          return circle;
+        }
+
         const newRGBColorFromParams = `rgba(${matchCircle.color[0]}, ${matchCircle.color[1]}, ${matchCircle.color[2]}, ${matchCircle.color[3]})`;
         return { ...circle, color: newRGBColorFromParams };
       });
