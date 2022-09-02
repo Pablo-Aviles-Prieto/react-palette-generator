@@ -3,8 +3,8 @@ import { useCallback, useState } from 'react';
 import styles from './DropDownOptions.module.css';
 import ModalBackdrop from '../UI/ModalBackdrop';
 import renderSelectedPickerComponent from '../Pickers/renderSelectedPickerComponent';
-import { useScreenWidth } from 'utils/width-screen';
-import { Close } from 'components/Icons';
+import { useScreenWidth } from 'utils';
+import { Close, UpperArrow } from 'components/Icons';
 
 const DropDownOptions = ({
   dropDownTitle,
@@ -17,11 +17,7 @@ const DropDownOptions = ({
 
   const isMobile = useScreenWidth(870);
 
-  const openModalBackdropHandler = () => {
-    setIsOpen((prevState) => !prevState);
-  };
-
-  const onCloseModalBackdropHandler = useCallback(() => {
+  const toggleModalBackdropHandler = useCallback(() => {
     setIsOpen((prevState) => !prevState);
   }, []);
 
@@ -44,6 +40,7 @@ const DropDownOptions = ({
     return (
       <ul className={ulStyle}>
         {optionsDropDown.map((option) => {
+          console.log('option.label', option.label);
           return selectedPicker === option.label ? (
             <li
               className={liStyle}
@@ -65,6 +62,13 @@ const DropDownOptions = ({
             </li>
           );
         })}
+        {!isMobile && (
+          <UpperArrow
+            onClick={toggleModalBackdropHandler}
+            color='#8a61e9'
+            width={35}
+          />
+        )}
       </ul>
     );
   };
@@ -88,7 +92,7 @@ const DropDownOptions = ({
   return (
     <>
       {isMobile && isOpen && (
-        <ModalBackdrop onClose={onCloseModalBackdropHandler}>
+        <ModalBackdrop onClose={toggleModalBackdropHandler}>
           <div>
             <div
               style={{ position: 'relative', cursor: 'unset' }}
@@ -96,7 +100,7 @@ const DropDownOptions = ({
             >
               <div>{dropDownTitle}</div>
               <Close
-                onClick={onCloseModalBackdropHandler}
+                onClick={toggleModalBackdropHandler}
                 className={styles['drop-down-close-x']}
               />
             </div>
@@ -119,19 +123,21 @@ const DropDownOptions = ({
           )}
         </ModalBackdrop>
       )}
-      <div className={hideDropDownOnModal}>
-        <div
-          className={
-            !isOpen
-              ? `${styles['drop-down-title']}`
-              : `${styles['drop-down-title']} ${styles.selected}`
-          }
-          onClick={openModalBackdropHandler}
-        >
-          {dropDownTitle}
+      <div>
+        <div className={hideDropDownOnModal}>
+          <div
+            className={
+              !isOpen
+                ? `${styles['drop-down-title']}`
+                : `${styles['drop-down-title']} ${styles.selected}`
+            }
+            onClick={toggleModalBackdropHandler}
+          >
+            {dropDownTitle}
+          </div>
+          {!isMobile &&
+            pickerListRender(openOptionsClass, styles['selected-picker'])}
         </div>
-        {!isMobile &&
-          pickerListRender(openOptionsClass, styles['selected-picker'])}
       </div>
     </>
   );

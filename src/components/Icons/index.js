@@ -6,3 +6,4 @@ export * from './Copied';
 export * from './Pencil';
 export * from './Help';
 export * from './Close';
+export * from './UpperArrow';

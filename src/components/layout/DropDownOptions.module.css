@@ -12,8 +12,6 @@ li:hover {
 
 .selected-picker {
   color: rgb(138, 97, 233);
-  border-radius: 7px;
-  border-bottom: 1px solid;
 }
 
 .hidden-class {
@@ -30,17 +28,16 @@ li:hover {
   right: 1rem;
   text-align: center;
   border-radius: 12px;
-  box-shadow: 1px 2px 5px #8a61e9;
+  box-shadow: 1px 2px 5px rgb(138, 97, 233);
 }
 
 .drop-down-card-closed {
   max-height: 51px;
-  transition: max-height 0.35s ease-in;
 }
 
 .drop-down-card-active {
-  max-height: 200px;
-  transition: max-height 0.35s ease-out;
+  max-height: 20rem;
+  transition: max-height 0.45s ease-out;
 }
 
 .drop-down-title {
@@ -52,10 +49,6 @@ li:hover {
   transform-origin: top center;
 }
 
-.drop-down-option > li:first-child {
-  margin-top: 1rem;
-}
-
 .drop-down-option > li {
   animation: rotateX 800ms ease-in-out forwards;
   transform-origin: top right;
@@ -63,12 +56,21 @@ li:hover {
   overflow: hidden;
   cursor: pointer;
   border-bottom: 0;
-  width: 135px;
-  margin: auto;
+}
+
+.drop-down-option > li:first-child {
+  margin-top: 1rem;
+}
+
+.drop-down-option > svg {
+  cursor: pointer;
+  padding-top: 0.2rem;
+  margin-top: 0.8rem;
+  border-top: 1px solid rgb(138, 97, 233);
 }
 
 .selected-picker-modal {
-  color: #8a61e9;
+  color: rgb(138, 97, 233);
   border-radius: 7px;
 }
 
